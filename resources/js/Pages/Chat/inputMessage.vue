@@ -21,6 +21,32 @@
 import Input from "@/Jetstream/Input";
 import Button from "@/Jetstream/Button";
 export default {
-    props: ['room']
+    components: {Button, Input},
+    props: ['room'],
+    data: function () {
+        return {
+            message: ""
+        }
+    },
+    methods: {
+        sendMessage() {
+            if( this.message === " ") {
+                return;
+            }
+
+            axios.post('/chat/room/' + this.room.id + '/message', {
+                message: this.message
+            })
+            .then( response => {
+                if( response.status === 201) {
+                    this.message = "";
+                    this.$emit('messagesent');
+                }
+            })
+            .catch( error => {
+                console.log( error );
+            })
+        }
+    }
 }
 </script>
