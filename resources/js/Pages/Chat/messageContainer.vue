@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import messageItem from "./messageItem";
+import messageItem from "./messageItem.vue";
 export default {
     components: { messageItem },
     props: ['messages']
