@@ -46,7 +46,10 @@ export default {
         }
     },
     watch: {
-        currentRoom() {
+        currentRoom( value, oldValue) {
+            if(oldValue.id) {
+                this.disconnect(oldValue);
+            }
             this.connect();
         }
     },
@@ -60,6 +63,9 @@ export default {
                     vm.getMessages();
                 });
             }
+        },
+        disconnect( room ) {
+            window.Echo.leave("chat." + room.id);
         },
         getRooms() {
             axios.get('/chat/rooms')
