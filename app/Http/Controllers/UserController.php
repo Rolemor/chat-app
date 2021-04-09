@@ -10,6 +10,11 @@ class UserController extends Controller
     public function getUsers() {
         //TODO
     }
+
+    public function getFriends() {
+        //TODO
+    }
+
     public function addFriend($id) {
 
         $addUser = auth()->user()->friends()->attach([$id]);
