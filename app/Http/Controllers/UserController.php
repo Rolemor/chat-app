@@ -15,17 +15,14 @@ class UserController extends Controller
         //TODO
     }
 
-    public function addFriend($id) {
+    public function toggleFriend($id) {
+        $userFriends = auth()->user()->friends();
 
-        $addUser = auth()->user()->friends()->attach([$id]);
-
-        return [];
-    }
-
-    public function removeFriend($id) {
-
-        $removeFriend = auth()->user()->friends()->detach([$id]);
-
-        return [];
+        if($userFriends->find($id)) {
+            $userFriends->detach([$id]);
+            return 'User Removed';
+        }
+        $userFriends->attach([$id]);
+        return 'User Added';
     }
 }
