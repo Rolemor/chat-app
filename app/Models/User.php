@@ -58,4 +58,18 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function friends() {
+        return $this->belongsToMany(User::class, 'friend_user', 'user_id', 'friend_id');
+    }
+
+    public function toArray()
+    {
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'email' => $this->email,
+            'friends' => $this->friends
+        ];
+    }
 }
