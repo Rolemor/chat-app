@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
+    public function getUsers() {
+        //TODO
+    }
     public function addFriend($id) {
 
         $addUser = auth()->user()->friends()->attach([$id]);
