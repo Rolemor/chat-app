@@ -38,5 +38,4 @@ Route::middleware('auth:sanctum')->get('/chat/rooms', [ChatController::class, 'r
 Route::middleware('auth:sanctum')->get('/chat/room/{roomId}/messages', [ChatController::class, 'messages']);
 Route::middleware('auth:sanctum')->post('/chat/room/{roomId}/message', [ChatController::class, 'newMessage']);
 
-Route::middleware('auth:sanctum')->get('/addFriend/{id}', [UserController::class, 'addFriend']);
-Route::middleware('auth:sanctum')->get('/removeFriend/{id}', [UserController::class, 'removeFriend']);
+Route::middleware('auth:sanctum')->get('/toggleFriend/{id}', [UserController::class, 'toggleFriend']);
