@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     public function getUsers() {
-        //TODO
+        //TODO: decide between 2 option: 1.fetchall -> frontend filter 2.fetch with string -> backend filter
     }
 
     public function getFriends() {
