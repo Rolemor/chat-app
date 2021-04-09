@@ -13,4 +13,11 @@ class UserController extends Controller
 
         return [];
     }
+
+    public function removeFriend($id) {
+
+        $removeFriend = auth()->user()->friends()->detach([$id]);
+
+        return [];
+    }
 }
