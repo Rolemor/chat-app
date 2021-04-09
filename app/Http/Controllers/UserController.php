@@ -12,7 +12,7 @@ class UserController extends Controller
     }
 
     public function getFriends() {
-        //TODO
+        return auth()->user()->friends()->get();
     }
 
     public function toggleFriend($id) {
