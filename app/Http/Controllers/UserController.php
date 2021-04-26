@@ -27,6 +27,14 @@ class UserController extends Controller
         return 'Request Added';
     }
 
+    public function removeFriendRequest($id) {
+        $userFriends = auth()->user()->friendRequests();
+        $userFriendsOf = auth()->user()->friendRequestsOf();
+        $userFriends->detach([$id]);
+        $userFriendsOf->detach([$id]);
+        return 'Request Removed';
+    }
+
     public function getFriends() {
         return auth()->user()->friends()->get();
     }
