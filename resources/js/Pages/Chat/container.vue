@@ -15,7 +15,8 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <message-container
-                        :messages="messages"/>
+                        :messages="messages"
+                        :user_id="user_id"/>
                     <input-message
                         :room="currentRoom"
                         v-on:messagesent="getMessages"/>
