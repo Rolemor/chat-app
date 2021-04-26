@@ -43,7 +43,8 @@ export default {
         return {
             chatRooms: [],
             currentRoom: [],
-            messages : []
+            messages : [],
+            user_id: ''
         }
     },
     watch: {
