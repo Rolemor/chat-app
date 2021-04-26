@@ -11,6 +11,10 @@ class UserController extends Controller
         //TODO: decide between 2 option: 1.fetchall -> frontend filter 2.fetch with string -> backend filter
     }
 
+    public function getUserInfo() {
+        return auth()->user()->id;
+    }
+
     public function getFriends() {
         return auth()->user()->friends()->get();
     }
