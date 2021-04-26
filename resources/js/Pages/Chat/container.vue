@@ -89,10 +89,17 @@ export default {
             .catch(error => {
                 console.log(error);
             })
+        },
+        getUserId() {
+            axios.get('/getUserInfo')
+            .then( response => {
+                this.user_id = response.data;
+            } )
         }
     },
     created() {
         this.getRooms();
+        this.getUserId();
     },
 }
 </script>
