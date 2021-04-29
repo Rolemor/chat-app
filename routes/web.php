@@ -50,5 +50,7 @@ Route::middleware('auth:sanctum')->get('/removeFriendRequestOf/{id}', [UserContr
 Route::middleware('auth:sanctum')->get('/acceptFriendRequest/{id}', [UserController::class, 'acceptFriendRequest']);
 
 Route::middleware('auth:sanctum')->get('/getFriendRequests', [UserController::class, 'getFriendRequests']);
+Route::middleware('auth:sanctum')->get('/getFriendRequestsOf', [UserController::class, 'getFriendRequestsOf']);
+
 Route::middleware('auth:sanctum')->get('/toggleFriend/{id}', [UserController::class, 'toggleFriend']);
 Route::middleware('auth:sanctum')->get('/getFriends', [UserController::class, 'getFriends']);
