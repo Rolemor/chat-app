@@ -19,6 +19,10 @@ class UserController extends Controller
         return auth()->user()->friendRequests()->get();
     }
 
+    public function getFriendRequestsOf() {
+        return auth()->user()->friendRequestsOf()->get();
+    }
+
     public function addFriendRequest($id) {
         $userFriends = auth()->user()->friendRequests();
         $userFriendsOf = auth()->user()->friendRequestsOf();
