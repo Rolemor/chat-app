@@ -25,9 +25,7 @@ class UserController extends Controller
 
     public function addFriendRequest($id) {
         $userFriends = auth()->user()->friendRequests();
-        $userFriendsOf = auth()->user()->friendRequestsOf();
         $userFriends->attach([$id]);
-        $userFriendsOf->attach([$id]);
         return 'Request Added';
     }
 
@@ -40,9 +38,7 @@ class UserController extends Controller
     }
 
     public function acceptFriendRequest($id) {
-        $userFriends = auth()->user()->friendRequests();
         $userFriendsOf = auth()->user()->friendRequestsOf();
-        $userFriends->detach([$id]);
         $userFriendsOf->detach([$id]);
         $this->toggleFriend($id);
         return 'Request Accepted & Friend Added';
