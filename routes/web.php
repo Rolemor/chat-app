@@ -43,6 +43,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/search', function () {
 })->name('search');
 
 Route::middleware('auth:sanctum')->get('/getUserInfo', [UserController::class, 'getUserInfo']);
+Route::middleware('auth:sanctum')->post('/getUsersByName', [UserController::class, 'getUsersByName']);
 
 Route::middleware('auth:sanctum')->get('/chat/rooms', [ChatController::class, 'rooms']);
 Route::middleware('auth:sanctum')->get('/chat/room/{roomId}/messages', [ChatController::class, 'messages']);
