@@ -49,3 +49,31 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.w-200 {
+    width: 200px;
+    max-width: 100%;
+}
+.small-screen {
+    min-width: 50%;
+}
+
+@media (min-width: 420px) {
+    .small-screen {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .half-w {
+        width: 50%;
+    }
+}
+
+@media (max-width: 420px) {
+    .half-w {
+        width: 100%;
+    }
+}
+
+</style>
