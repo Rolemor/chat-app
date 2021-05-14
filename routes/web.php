@@ -38,6 +38,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/friends', function () {
     return Inertia::render('FriendRequest/container');
 })->name('friends');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/search', function () {
+    return Inertia::render('UserSearch/container');
+})->name('search');
+
 Route::middleware('auth:sanctum')->get('/getUserInfo', [UserController::class, 'getUserInfo']);
 
 Route::middleware('auth:sanctum')->get('/chat/rooms', [ChatController::class, 'rooms']);
