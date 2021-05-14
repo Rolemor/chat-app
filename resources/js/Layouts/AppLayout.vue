@@ -26,6 +26,9 @@
                                 <jet-nav-link :href="route('friends')" :active="route().current('friends')">
                                     Friends
                                 </jet-nav-link>
+                                <jet-nav-link :href="route('search')" :active="route().current('search')">
+                                    Search
+                                </jet-nav-link>
                             </div>
                         </div>
 
@@ -154,6 +157,9 @@
                         </jet-responsive-nav-link>
                         <jet-responsive-nav-link :href="route('friends')" :active="route().current('friends')">
                             Friends
+                        </jet-responsive-nav-link>
+                        <jet-responsive-nav-link :href="route('search')" :active="route().current('search')">
+                            Search
                         </jet-responsive-nav-link>
                     </div>
 
