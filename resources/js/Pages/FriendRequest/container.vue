@@ -8,8 +8,15 @@
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg flex-col">
-                    <friend-request-container :friendRequests="friendRequests" />
-                    <friends-container :friends="friends" />
+                    <friend-request-container
+                        v-on:requestdeleted="getFriendRequests()"
+                        v-on:requestofdeleted="getFriendRequestsOf()"
+                        v-on:requestaccepted="requestAccepted()"
+                        :friendRequests="friendRequests"
+                        :friendRequestsOf="friendRequestsOf"/>
+                    <friends-container
+                        v-on:frienddeleted="getFriends()"
+                        :friends="friends" />
                 </div>
             </div>
         </div>
@@ -31,6 +38,7 @@ export default {
     data: function () {
         return {
             friendRequests: [],
+            friendRequestsOf: [],
             friends: []
         }
     },
@@ -52,11 +60,25 @@ export default {
             .catch(error => {
                 console.log(error);
             })
+        },
+        getFriendRequestsOf() {
+            axios.get('/getFriendRequestsOf')
+                .then( response => {
+                    this.friendRequestsOf = response.data;
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        },
+        requestAccepted() {
+            this.getFriendRequestsOf();
+            this.getFriends();
         }
     },
     created() {
         this.getFriends();
         this.getFriendRequests();
+        this.getFriendRequestsOf();
     }
 }
 </script>
