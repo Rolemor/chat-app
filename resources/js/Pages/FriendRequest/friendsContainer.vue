@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="p-2 m-3 bg-gray-200 text-xl rounded-lg shadow-lg">
         Friends:
     </div>
     <div class="h-64 w-full">
@@ -26,3 +26,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.w-200 {
+    width: 202px;
+    max-width: 100%;
+}
+</style>
