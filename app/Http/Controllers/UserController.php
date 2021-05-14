@@ -4,11 +4,38 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function getUsers() {
-        //TODO: decide between 2 option: 1.fetchall -> frontend filter 2.fetch with string -> backend filter
+    public function getUsersByName(Request $request) {
+        $userId = auth()->user()->id;
+        $searchName = '%' . $request->name . '%';
+
+        $friendQuery = DB::table('friend_user')
+            ->select('*')
+            ->where('user_id', '=', $userId);
+
+        return DB::table('users')
+            ->join('friend_request as fr', 'fr.friend_id', '=', 'users.id', 'left')
+            ->join('friend_request as f', 'f.user_id', '=', 'users.id', 'left')
+            ->joinSub($friendQuery, 'fu', 'fu.friend_id', '=', 'users.id', 'left')
+            ->select(DB::raw("users.id,
+               users.name,
+               CASE
+                    WHEN fr.user_id = {$userId} THEN 2
+                    WHEN f.friend_id = {$userId} THEN 3
+                    WHEN fu.user_id = {$userId} THEN 1
+                    ELSE 4
+                END AS relationship"))
+            ->where('users.id', '!=', $userId,)
+            ->where('users.name', 'like', $searchName,)
+            ->orderBy('relationship')
+            ->orderBy('users.id')
+            ->distinct()
+            ->get();
+
+
     }
 
     public function getUserInfo() {
