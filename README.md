@@ -15,9 +15,9 @@
 
 
 #### Small description:
-So I wanted to know how hard is to create a social network like Facebook and that's why started this project.<br>
+I wanted to know how hard is to create a social network like Facebook and that's why started this project.<br>
 
-First step was to create a chat app. So I decided to created it with PHP(Laravel) as backend and Vue.js for frontend.<br>
+First step was to create a chat app. I decided to created it with PHP(Laravel) as backend and Vue.js for frontend.<br>
 The Vue is new to me so this is my first program with it and I use Tailwind CSS as a new framework for styling too.<br>
 
 
