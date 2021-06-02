@@ -1,9 +1,9 @@
-#The Guild
+# The Guild
 
-####Chat application
+#### Chat application
 <ul>Created by: Oliver Simon (Rolemor)</ul>
 
-####Used Technologies:
+#### Used Technologies:
 <ul>Frontend:
     <ul>Vue.js</ul>
     <ul>Tailwind CSS</ul></ul>
@@ -14,7 +14,7 @@
     <ul>Pusher</ul></ul>
 
 
-####Small description:
+#### Small description:
 So I wanted to know how hard is to create a social network like Facebook and that's why started this project.<br>
 
 First step was to create a chat app. So I decided to created it with PHP(Laravel) as backend and Vue.js for frontend.<br>
@@ -23,7 +23,7 @@ The Vue is new to me so this is my first program with it and I use Tailwind CSS 
 
 
 
-####Setup for the app
+#### Setup & Run the app
 <ul>Preparation:
 <ul>Install packages and dependencies with Composer and NPM</ul>
      
