@@ -21,7 +21,7 @@ class UserController extends Controller
             ->join('friend_request as f', 'f.user_id', '=', 'users.id', 'left')
             ->joinSub($friendQuery, 'fu', 'fu.friend_id', '=', 'users.id', 'left')
             ->select(DB::raw("users.id,
-               users.name,
+               users.name, users.profile_photo_path,
                CASE
                     WHEN fr.user_id = {$userId} THEN 2
                     WHEN f.friend_id = {$userId} THEN 3
