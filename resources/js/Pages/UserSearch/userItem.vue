@@ -1,5 +1,8 @@
 <template>
     <div class="flex flex-col p-1 m-1 bg-blue-400 rounded-lg shadow-lg" v-if="user.relationship === 1">
+        <div v-if="$page.props.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
+            <img class="h-8 w-8 rounded-full object-cover" :src="'/storage/' + user.profile_photo_path" :alt="user.name" />
+        </div>
         <div>{{ user.name }}</div>
         <div>Friend</div>
         <div class="flex-row">
@@ -7,6 +10,9 @@
         </div>
     </div>
     <div class="flex flex-col p-1 m-1 bg-green-400 rounded-lg shadow-lg" v-else-if="user.relationship === 2">
+        <div v-if="$page.props.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
+            <img class="h-8 w-8 rounded-full object-cover" :src="'/storage/' + user.profile_photo_path" :alt="user.name" />
+        </div>
         <div>{{ user.name }}</div>
         <div>My Request</div>
         <div class="flex-row">
@@ -14,6 +20,9 @@
         </div>
     </div>
     <div class="flex flex-col p-1 m-1 bg-yellow-400 rounded-lg shadow-lg" v-else-if="user.relationship === 3">
+        <div v-if="$page.props.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
+            <img class="h-8 w-8 rounded-full object-cover" :src="'/storage/' + user.profile_photo_path" :alt="user.name" />
+        </div>
         <div>{{ user.name }}</div>
         <div>Request to me</div>
         <div class="flex-row">
@@ -22,6 +31,9 @@
         </div>
     </div>
     <div class="flex flex-col p-1 m-1 bg-gray-200 rounded-lg shadow-lg" v-else>
+        <div v-if="$page.props.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition duration-150 ease-in-out">
+            <img class="h-8 w-8 rounded-full object-cover" :src="'/storage/' + user.profile_photo_path" :alt="user.name" />
+        </div>
         <div>{{ user.name }}</div>
         <div>Not Friend</div>
         <div class="flex-row">
