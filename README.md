@@ -1,62 +1,58 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+#The Guild
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+####Chat application
+<ul>Created by: Oliver Simon (Rolemor)</ul>
 
-## About Laravel
+####Used Technologies:
+<ul>Frontend:
+    <ul>Vue.js</ul>
+    <ul>Tailwind CSS</ul></ul>
+<ul>Backend:
+    <ul>PHP(Laravel)</ul>
+    <ul>MYSQL(database)</ul></ul>
+<ul>3rd party app for Broadcasting:
+    <ul>Pusher</ul></ul>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+####Small description:
+So I wanted to know how hard is to create a social network like Facebook and that's why started this project.<br>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+First step was to create a chat app. So I decided to created it with PHP(Laravel) as backend and Vue.js for frontend.<br>
+The Vue is new to me so this is my first program with it and I use Tailwind CSS as a new framework for styling too.<br>
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+####Setup for the app
+<ul>Preparation:
+<ul>Install packages and dependencies with Composer and NPM</ul>
+     
+     composer install
+     npm install
+     
+<ul>Create a MYSQL database on your device and update the .env file with the parameters and than use the artisan command to migrate the database.</ul>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    php artisan migrate
 
-### Premium Partners
+<ul>Register on Pusher website and create az App to get the API keys that you will use in the .env file</ul>
+<ul>Link for Pusher: <a href="https://pusher.com/">https://pusher.com/</a></ul>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+    PUSHER_APP_ID="App id here"
+    PUSHER_APP_KEY="App key here"
+    PUSHER_APP_SECRET="Secret key here"
+    PUSHER_APP_CLUSTER="Continent abbreviation like: eu or us"
+    
+<ul>And write 'pusher' as broadcast driver</ul>
 
-## Contributing
+    BROADCAST_DRIVER=pusher
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+</ul>
+<ul>Run the program:
+<ul>Use apache to run the server or the laravel artisan command on 1 terminal</ul>
 
-## Code of Conduct
+    php artisan serve
+    
+<ul>Open a second terminal to use npm run hot</ul>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    npm run hot
+</ul>
