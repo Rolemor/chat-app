@@ -5,10 +5,10 @@
 
 #### Used Technologies:
 <ul>Frontend:
-    <ul>Vue.js</ul>
-    <ul>Tailwind CSS</ul></ul>
+    <ul>Vue.js(3.0.5)</ul>
+    <ul>Tailwind CSS(2.0.4)</ul></ul>
 <ul>Backend:
-    <ul>PHP(Laravel)</ul>
+    <ul>PHP(Laravel 7.4)</ul>
     <ul>MYSQL(database)</ul></ul>
 <ul>3rd party app for Broadcasting:
     <ul>Pusher</ul></ul>
