@@ -14,14 +14,6 @@ class ChatController extends Controller
         return ChatRoom::all();
     }
 
-    public function newRoom( Request $request ) {
-        //TODO
-    }
-
-    public function removeRoom( Request $request ) {
-        //TODO
-    }
-
     public function messages( Request $request, $roomId ) {
         return ChatMessage::where('chat_room_id', $roomId)
             ->with('user')
