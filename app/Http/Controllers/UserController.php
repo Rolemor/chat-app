@@ -34,8 +34,6 @@ class UserController extends Controller
             ->orderBy('users.id')
             ->distinct()
             ->get();
-
-
     }
 
     public function getUserInfo() {
